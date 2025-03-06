@@ -1,6 +1,8 @@
 ---
 import Layout from '@layouts/root/root'
 import Container from '@components/Container/Container'
+import logo from '@images/logo.svg'
+import { Image } from 'astro:assets'
 
 const pageList = [
   {
@@ -15,7 +17,7 @@ const pageList = [
     <div class="sitemap">
       <Container mod="big">
         <div class="sitemap__logo">
-          <img src="/src/assets/images/logo.svg" alt="logo" />
+          <Image src={logo} alt="logo" loading="eager" />
         </div>
         <h1>Список страниц</h1>
         <ol>

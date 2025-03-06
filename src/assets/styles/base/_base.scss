@@ -46,29 +46,6 @@ body {
   position: relative;
   font-family: variables.$font-main;
   color: variables.$color-black;
-  font-feature-settings:
-    "liga" off,
-    "clig" off;
-
-  &::before {
-    content: "";
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 99;
-    background-color: transparent;
-    transition: all 450ms ease;
-  }
-
-  &.is-overlayed {
-    &::before {
-      pointer-events: all;
-      background-color: #ffffff;
-    }
-  }
 }
 
 // z-Indexes

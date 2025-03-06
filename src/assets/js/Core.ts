@@ -265,43 +265,43 @@ class ModuleManager {
             gsapInstance.registerPlugin(ScrollTrigger)
             this.modules[moduleName] = ScrollTrigger
             break
-          case 'SlimSelect':
-            // Динамическая вставка стилей через <link>, если они ещё не загружены
-            if (!document.querySelector('link[href*="slimselect.css"]')) {
-              const link = document.createElement('link')
-              link.rel = 'stylesheet'
-              link.href = new URL(
-                '/node_modules/slim-select/dist/slimselect.css',
-                import.meta.url
-              ).toString()
-              document.head.appendChild(link)
-            }
-            this.modules[moduleName] = (await import('slim-select')).default
-            break
-          case 'simplebar':
-            if (!document.querySelector('link[href*="simplebar.css"]')) {
-              const link = document.createElement('link')
-              link.rel = 'stylesheet'
-              link.href = new URL(
-                'simplebar/dist/simplebar.css',
-                import.meta.url
-              ).toString()
-              document.head.appendChild(link)
-            }
-            this.modules[moduleName] = (await import('simplebar')).default
-            break
-          case 'splitting':
-            this.modules[moduleName] = (await import('splitting')).default
-            break
-          case 'slugify':
-            this.modules[moduleName] = (await import('slugify')).default
-            break
-          case 'vanilla-cookieconsent':
-            this.modules[moduleName] = await import('vanilla-cookieconsent')
-            break
-          case 'intl-tel-input':
-            this.modules[moduleName] = (await import('intl-tel-input')).default
-            break
+          // case 'SlimSelect':
+          //   // Динамическая вставка стилей через <link>, если они ещё не загружены
+          //   if (!document.querySelector('link[href*="slimselect.css"]')) {
+          //     const link = document.createElement('link')
+          //     link.rel = 'stylesheet'
+          //     link.href = new URL(
+          //       '/node_modules/slim-select/dist/slimselect.css',
+          //       import.meta.url
+          //     ).toString()
+          //     document.head.appendChild(link)
+          //   }
+          //   this.modules[moduleName] = (await import('slim-select')).default
+          //   break
+          // case 'simplebar':
+          //   if (!document.querySelector('link[href*="simplebar.css"]')) {
+          //     const link = document.createElement('link')
+          //     link.rel = 'stylesheet'
+          //     link.href = new URL(
+          //       'simplebar/dist/simplebar.css',
+          //       import.meta.url
+          //     ).toString()
+          //     document.head.appendChild(link)
+          //   }
+          //   this.modules[moduleName] = (await import('simplebar')).default
+          //   break
+          // case 'splitting':
+          //   this.modules[moduleName] = (await import('splitting')).default
+          //   break
+          // case 'slugify':
+          //   this.modules[moduleName] = (await import('slugify')).default
+          //   break
+          // case 'vanilla-cookieconsent':
+          //   this.modules[moduleName] = await import('vanilla-cookieconsent')
+          //   break
+          // case 'intl-tel-input':
+          //   this.modules[moduleName] = (await import('intl-tel-input')).default
+          //   break
           default:
             throw new Error(`Unknown module: ${moduleName}`)
         }
@@ -600,7 +600,7 @@ class Core {
    */
   public async init(): Promise<void> {
     await this.scrollController.initialize()
-    await this.initializeSimpleBar()
+    // await this.initializeSimpleBar()
     window.copyToClipboard = copyToClipboard
   }
 
@@ -608,17 +608,17 @@ class Core {
    * Инициализация SimpleBar.
    * @return {Promise<void>} Промис, который разрешается после инициализации SimpleBar.
    */
-  private async initializeSimpleBar(): Promise<void> {
-    await this.moduleManager.loadModule('simplebar')
-    const SimpleBar = this.moduleManager.getModule('simplebar')
-    const elements = [
-      ...document.querySelectorAll('.modal.modal--toc'),
-      ...document.querySelectorAll('.breadcrumbs')
-    ]
-    elements.forEach((el: HTMLElement) => {
-      new SimpleBar(el, { autoHide: true })
-      el.style.overflow = 'unset'
-    })
-  }
+  // private async initializeSimpleBar(): Promise<void> {
+  //   await this.moduleManager.loadModule('simplebar')
+  //   const SimpleBar = this.moduleManager.getModule('simplebar')
+  //   const elements = [
+  //     ...document.querySelectorAll('.modal.modal--toc'),
+  //     ...document.querySelectorAll('.breadcrumbs')
+  //   ]
+  //   elements.forEach((el: HTMLElement) => {
+  //     new SimpleBar(el, { autoHide: true })
+  //     el.style.overflow = 'unset'
+  //   })
+  // }
 }
 export default Core
