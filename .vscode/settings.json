@@ -4,7 +4,9 @@
     "javascriptreact",
     "astro", // Enable .astro
     "typescript", // Enable .ts
-    "typescriptreact" // Enable .tsx
+    "typescriptreact", // Enable .tsx
+    "vue",
+    "vue-html"
   ],
   "stylelint.validate": ["css", "scss", "postcss"],
   "editor.formatOnSave": true,

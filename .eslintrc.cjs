@@ -5,7 +5,7 @@ module.exports = {
     node: true,
     es2021: true
   },
-  extends: ['plugin:astro/recommended', 'prettier'],
+  extends: ['plugin:astro/recommended', 'plugin:vue/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   globals: {
     Fragment: 'readonly',
@@ -25,10 +25,20 @@ module.exports = {
         parser: '@typescript-eslint/parser',
         extraFileExtensions: ['.astro']
       }
+    },
+    {
+      files: ['*.vue'],
+      parser: 'vue-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        ecmaVersion: 2020,
+        sourceType: 'module'
+      }
     }
   ],
   rules: {
     'jsx-quotes': [2, 'prefer-double'],
+    'vue/html-quotes': ['error', 'double'],
     'semi': ['error', 'never'],
     'quotes': ['error', 'single', { avoidEscape: true }],
     // ECMAScript 6
@@ -205,7 +215,6 @@ module.exports = {
     'rest-spread-spacing': 'error',
     'yield-star-spacing': ['error', 'after'],
     'object-shorthand': ['error', 'always', { avoidQuotes: true }],
-
     'comma-dangle': [
       'error',
       {
@@ -214,6 +223,51 @@ module.exports = {
         imports: 'never',
         exports: 'never',
         functions: 'never'
+      }
+    ],
+    'vue/no-irregular-whitespace': [
+      'error',
+      {
+        skipStrings: true,
+        skipComments: false,
+        skipRegExps: false,
+        skipTemplates: false,
+        skipHTMLAttributeValues: false,
+        skipHTMLTextContents: false
+      }
+    ],
+    'vue/component-definition-name-casing': ['error', 'PascalCase'],
+    'vue/multi-word-component-names': 'off',
+    'vue/match-component-file-name': [
+      'error',
+      {
+        extensions: ['vue'],
+        shouldMatchCase: false
+      }
+    ],
+    'vue/attributes-order': [
+      'error',
+      {
+        order: [
+          'DEFINITION',
+          'LIST_RENDERING',
+          'CONDITIONALS',
+          'RENDER_MODIFIERS',
+          'GLOBAL',
+          ['UNIQUE', 'SLOT'],
+          'TWO_WAY_BINDING',
+          'OTHER_DIRECTIVES',
+          'OTHER_ATTR',
+          'EVENTS',
+          'CONTENT'
+        ],
+        alphabetical: false
+      }
+    ],
+    'vue/no-dupe-keys': [
+      'error',
+      {
+        groups: []
       }
     ]
   }
