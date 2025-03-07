@@ -1,4 +1,4 @@
-import Core from '../Core'
+import Core from '../core/Core'
 
 // Model: Управление состоянием вкладок
 class TabsModel {

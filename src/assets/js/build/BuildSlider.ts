@@ -1,6 +1,6 @@
 import type { SwiperOptions, Swiper } from 'swiper/types'
 import { debounce } from '../utils/global'
-import Core from '../Core'
+import Core from '../core/Core'
 /**
  * Синглтон для управления экземплярами Swiper.
  */

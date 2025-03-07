@@ -1,7 +1,7 @@
 /* stylelint-disable declaration-no-important */
-@use "../../assets/styles/utils/variables";
-@use "../../assets/styles/utils/mixins";
-@use "../../assets/styles/utils/functions";
+@use "@scss/utils/variables";
+@use "@scss/utils/mixins";
+@use "@scss/utils/functions";
 
 .header {
   display: flex;

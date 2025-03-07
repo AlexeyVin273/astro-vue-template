@@ -1,6 +1,6 @@
-@use "../../assets/styles/utils/variables" as *;
-@use "../../assets/styles/utils/mixins" as *;
-@use "../../assets/styles/utils/functions";
+@use "@scss/utils/variables" as *;
+@use "@scss/utils/mixins" as *;
+@use "@scss/utils/functions";
 
 .container {
   width: 100%;

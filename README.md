@@ -24,20 +24,30 @@
 |   |   ├── icons/
 │   │   ├── images/
 |   |   ├── styles/
-│   │   | ├── animations/
-│   │   | ├── base/
-│   │   | ├── layout/
-│   │   | └── index.scss
+│   │   |   ├── animations/
+│   │   |   ├── base/
+│   │   |   ├── layout/
+│   │   |   └── index.scss
+|   │   ├── scripts/
+|   │   │   ├── api/
+|   │   │   ├── build/
+|   │   │   ├── components/
+|   │   │   ├── core/
+|   │   │   ├── utils/
+|   │   │   └── Main.ts
+|   │   │   └── ...
 |   |   └── ...
-│   ├── scripts/
-│   │   ├── modules/
-│   │   ├── utils/
-│   │   └── index.js
-│   │   └── ...
 │   ├── components/
-│   │   ├── Container/
-│   │   │   ├── Container.astro
-│   │   │   └── Container.scss
+|   |   ├── astro
+|   |   |   ├── Container/
+│   │   │   |   ├── Container.astro
+│   │   │   |   └── Container.scss
+│   │   |   └── ...
+|   |   ├── vue
+|   |   |   ├── Counter/
+│   │   │   |   ├── Counter.vue
+│   │   │   |   └── Counter.scss
+│   │   |   └── ...
 │   |   ├── ui/
 │   │   |   ├── Button/
 │   │   |   │   ├── Button.astro

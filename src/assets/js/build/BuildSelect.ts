@@ -1,4 +1,4 @@
-import Core from '../Core'
+import Core from '../core/Core'
 
 /**
  * Класс BuildInput управляет состоянием полей ввода и их сбросом.

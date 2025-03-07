@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { copyToClipboard } from './utils/helpers'
+import { copyToClipboard } from '../utils/helpers'
 
 declare global {
   export interface Window {

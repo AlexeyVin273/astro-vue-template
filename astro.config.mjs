@@ -54,6 +54,11 @@ export default defineConfig({
     open: '/sitemap'
   },
   vite: {
+    resolve: {
+      alias: {
+        '@scss': '/src/assets/styles/'
+      }
+    },
     build: {
       minify: true,
       emptyOutDir: true,
