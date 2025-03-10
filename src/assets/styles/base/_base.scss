@@ -8,21 +8,17 @@ body {
   padding: 0;
   width: 100%;
   min-height: variables.$height-100vh;
-
-  &::-webkit-scrollbar:horizontal {
-    height: 0;
-    width: 0;
-    display: none;
-  }
-
-  &::-webkit-scrollbar-thumb:horizontal {
-    display: none;
-  }
 }
 
 html {
   scroll-behavior: smooth;
   // Глобальный шрифт для резиновой верстки
+  font-style: normal;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // оптимизация выравнивания шрифта относительно центра строки
+  text-rendering: optimizeLegibility;
   font-size: functions.size-html(variables.$screen-414);
 
   @include mixins.min-768 {
@@ -44,11 +40,17 @@ html {
 
 body {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
   font-family: variables.$font-main;
   color: variables.$color-black;
+  background-color: variables.$color-white;
 }
 
-// z-Indexes
-// Overlay - 99
-// Header,Toc Progress - 11
-// Modals - 101
+main {
+  flex-grow: 1;
+  width: 100%;
+  min-width: 100%;
+}

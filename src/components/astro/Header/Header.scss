@@ -9,8 +9,8 @@
 
   &__logo {
     flex-shrink: 0;
-    width: 100px;
-    height: 30px;
+    width: 200px;
+    height: 60px;
 
     img {
       display: block;
@@ -18,5 +18,11 @@
       height: 100%;
       object-fit: contain;
     }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }

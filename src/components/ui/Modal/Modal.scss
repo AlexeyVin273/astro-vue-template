@@ -1,7 +1,7 @@
 /* stylelint-disable declaration-no-important */
-@use "../../../assets/styles/utils/variables";
-@use "../../../assets/styles/utils/mixins";
-@use "../../../assets/styles/utils/functions";
+@use "@scss/utils/variables";
+@use "@scss/utils/mixins";
+@use "@scss/utils/functions";
 
 .modal-wrapper {
   position: fixed;
@@ -50,10 +50,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding:
-    variables.$inner-block-spacing-l functions.pxToRem(16px)
-    functions.pxToRem(16px) functions.pxToRem(16px);
-  border-radius: variables.$big-blocks-corner;
+  padding: functions.pxToRem(16px);
   background: variables.$color-white;
   transform: translateY(100%);
   transition: all 600ms ease;
@@ -77,8 +74,6 @@
   }
 
   &__footer {
-    margin-top: variables.$inner-block-spacing-m;
-
     button {
       width: 100%;
     }
@@ -112,9 +107,7 @@
   }
 
   @include mixins.min-1024 {
-    padding:
-      variables.$inner-block-spacing-l functions.pxToRem(24px)
-      functions.pxToRem(24px) functions.pxToRem(24px);
+    padding: functions.pxToRem(24px);
     max-width: functions.pxToRem(688px);
     width: 100%;
 
